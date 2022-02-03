@@ -1,0 +1,13 @@
+---
+- hosts: app
+  gather_facts: true
+  tasks:
+    - name: install pqsql
+      package:
+        name: pgsql
+        state: installed
+    - name: start pgsql
+      service:
+        name: pgsql
+        state: started
+
